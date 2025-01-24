@@ -4,6 +4,7 @@ import {
   MaxLength,
   IsNumber,
   Min,
+  IsMongoId,
 } from 'class-validator';
 
 export class CreateProductDto {
@@ -13,6 +14,9 @@ export class CreateProductDto {
   name: string;
 
   @IsNumber()
-  @Min(0.01, { message: 'Price must be greater than 0' })
+  @Min(0, { message: 'Price must be greater than 0' })
   price: number;
+
+  @IsMongoId({ message: 'Invalid category ID' })
+  category: string;
 }

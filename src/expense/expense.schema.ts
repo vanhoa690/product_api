@@ -11,7 +11,7 @@ export class Expense {
   @Prop({ type: Types.ObjectId, ref: 'User', required: true })
   userId: Types.ObjectId;
 
-  @Prop({ type: Types.ObjectId, required: true })
+  @Prop({ type: Types.ObjectId })
   childId: Types.ObjectId;
 
   @Prop({ required: true })

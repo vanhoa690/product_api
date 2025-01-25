@@ -18,7 +18,7 @@ export class AuthService {
   ) {}
 
   async register(registerUserDto: RegisterUserDto): Promise<User> {
-    const { email, password } = registerUserDto;
+    const { name, email, password } = registerUserDto;
 
     // Kiểm tra xem email đã tồn tại chưa
     const existingUser = await this.userModel.findOne({ email });
@@ -30,7 +30,11 @@ export class AuthService {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Tạo người dùng mới
-    const newUser = new this.userModel({ email, password: hashedPassword });
+    const newUser = new this.userModel({
+      name,
+      email,
+      password: hashedPassword,
+    });
     return newUser.save();
   }
 

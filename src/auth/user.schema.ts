@@ -11,7 +11,7 @@ export class User {
   @Prop({ required: true, unique: true })
   email: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, select: false })
   password: string;
 
   @Prop([
@@ -22,7 +22,7 @@ export class User {
       gender: { type: String, enum: ['male', 'female'], required: true },
     },
   ])
-  childrens: {
+  children: {
     _id: Types.ObjectId;
     name: string;
     birthdate: Date;

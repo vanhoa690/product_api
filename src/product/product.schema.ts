@@ -6,6 +6,9 @@ export type ProductDocument = Product & Document;
 
 @Schema({ timestamps: true, versionKey: false })
 export class Product {
+  @Prop()
+  imageUrl: string; // Lưu đường dẫn ảnh
+
   @Prop({ required: true })
   name: string;
 

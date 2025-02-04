@@ -9,7 +9,7 @@ export class CreateExpenseDto {
   @IsNotEmpty()
   userId: Types.ObjectId;
 
-  childId: Types.ObjectId;
+  relativeId: Types.ObjectId;
 
   @IsNumber()
   amount: number;

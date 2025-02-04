@@ -6,17 +6,13 @@ export class CreateAppointmentDto {
   @IsNotEmpty()
   userId: Types.ObjectId;
 
-  childId: Types.ObjectId;
+  @IsNotEmpty()
+  doctorId: Types.ObjectId;
+
+  relativeId: Types.ObjectId;
 
   @IsDateString()
   date: string;
-
-  @IsNotEmpty()
-  doctor: {
-    name: string;
-    specialty: string;
-    clinic: string;
-  };
 
   @IsEnum(['confirmed', 'canceled', 'completed'])
   status: string;

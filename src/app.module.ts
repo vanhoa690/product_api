@@ -10,6 +10,7 @@ import { ExpenseModule } from './expense/expense.module';
 import { ChildrenModule } from './children/children.module';
 import { SeederModule } from './seeder/seeder.module';
 import { DoctorModule } from './doctor/doctor.module';
+import { RelativeModule } from './relative/relative.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { DoctorModule } from './doctor/doctor.module';
     ChildrenModule,
     SeederModule,
     DoctorModule,
+    RelativeModule,
   ],
 })
 export class AppModule {}

@@ -22,7 +22,7 @@ export class User {
       gender: { type: String, enum: ['male', 'female'], required: true },
     },
   ])
-  children: {
+  relatives: {
     _id: Types.ObjectId;
     name: string;
     birthdate: Date;
